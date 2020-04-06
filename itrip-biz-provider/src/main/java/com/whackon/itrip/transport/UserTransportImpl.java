@@ -30,4 +30,14 @@ public class UserTransportImpl implements UserTransport {
 	public List<User> getListByQuery(@RequestBody User query) throws Exception {
 		return userService.getListByQuery(query);
 	}
+	/**
+	 * <b>保存用户信息</b>
+	 * @param user
+	 * @return
+	 * @throws Exception
+	 */
+	@PostMapping(value = "/save")
+	public boolean saveUser(@RequestBody User user) throws Exception {
+		return userService.saveUser(user);
+	}
 }
